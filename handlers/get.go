@@ -14,5 +14,7 @@ func NewGet(logger *log.Logger) *Get {
 }
 
 func (get *Get) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	get.Logger.Println("Get request received")
+	w.WriteHeader(http.StatusOK) // 200 OK
+	w.Write([]byte("Received request for 'GET'\n"))
+	get.Logger.Println("Received request for 'GET'")
 }

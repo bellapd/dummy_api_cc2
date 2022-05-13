@@ -14,5 +14,7 @@ func NewPost(logger *log.Logger) *Get {
 }
 
 func (post *Post) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	post.Logger.Println("Post request received")
+	w.WriteHeader(http.StatusOK) // 200 OK
+	w.Write([]byte("Received request for 'POST'\n"))
+	post.Logger.Println("Received request for 'POST'")
 }

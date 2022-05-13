@@ -14,5 +14,7 @@ func NewDelete(logger *log.Logger) *Get {
 }
 
 func (delete *Delete) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	delete.Logger.Println("Post request received")
+	w.WriteHeader(http.StatusOK) // 200 OK
+	w.Write([]byte("Received request for 'DELETE'\n"))
+	delete.Logger.Println("Received request for 'DELETE'")
 }
