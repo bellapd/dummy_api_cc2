@@ -12,7 +12,7 @@ import (
 )	
 
 func main() {
-	logger := log.New(os.Stdout, "vodascheduler ", log.LstdFlags)
+	logger := log.New(os.Stdout, "dummy_api_cc2", log.LstdFlags)
 
 	serveMux := http.NewServeMux()
 	serveMux.Handle("/post", handlers.NewPost(logger))
